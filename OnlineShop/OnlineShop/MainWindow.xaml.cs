@@ -27,23 +27,50 @@ namespace OnlineShop
 
         private void btnPaint_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("herra");
+            Paint();
         }
 
         private void btnPaper_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hurra");
+            Paper();
         }
 
         private void btnTassel_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("lfg;ls");
+            Tassel();
         }
 
-        private void openWind_Click(object sender, RoutedEventArgs e)
+        
+        private void mainPaintBtn_Click(object sender, RoutedEventArgs e)
         {
-            NewPage n = new NewPage();
-            n.Show();
+            Paint();
+        }
+
+        private void mainPaperBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Paper();
+        }
+
+       
+
+        private void mainTasselBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Tassel();
+        }
+
+        void Paint()
+        {
+            MessageBox.Show("Paint");
+        }
+
+        void Paper()
+        {
+            MessageBox.Show("Paper");
+        }
+
+        void Tassel()
+        {
+            MessageBox.Show("Tassel");
         }
     }
 }

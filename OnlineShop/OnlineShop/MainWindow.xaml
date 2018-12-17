@@ -5,47 +5,178 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OnlineShop"
         mc:Ignorable="d"
-        Title="Home" Height="1022" Width="1440">
+        Title="Home" Height="590" Width="970">
     <Grid>
-        <Image x:Name="logo" HorizontalAlignment="Left" Height="53" Margin="492,33,0,0" VerticalAlignment="Top" Width="470" />
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="66,109,0,0" VerticalAlignment="Top" Width="1300"/>
-        <Button x:Name="btnPaint" Content="Paint" HorizontalAlignment="Left" Margin="394,128,0,833" VerticalAlignment="Center" Width="200" Height="30" Background="White" Click="btnPaint_Click">
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.003"/>
-                    <GradientStop Color="Black" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
+        <Label HorizontalContentAlignment="Center" Margin="0,20,0,0" FontFamily="Segoe Print" FontSize="36">ArtMart</Label>
+        <Border Height="1" VerticalAlignment="Top" Margin="20,85,20,0" Background="Black"/>
+        <Button x:Name="btnPaint" Click="btnPaint_Click" Content="Paint" Width="200" Height="30" Margin="100,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FF707070">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1">
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF9B4797"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
         </Button>
-        <Button x:Name="btnPaper" Content="Paper" HorizontalAlignment="Left" Margin="632,128,0,833" VerticalAlignment="Center" Width="200" Height="30" Background="White" Click="btnPaper_Click">
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0"/>
-                    <GradientStop Color="Black" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
+        <Button x:Name="btnPaper" Click="btnPaper_Click" Content="Paper" Width="200" Height="30" Margin="0,100,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1">
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFAC9393"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
         </Button>
-        <Button x:Name="btnTassel" Content="Tassel" HorizontalAlignment="Left" Margin="866,128,0,833" VerticalAlignment="Center" Width="200"  Height="30" Background="White" Click="btnTassel_Click">
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="#FFAA1F1F"/>
-                    <GradientStop Color="White"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
+        <Button x:Name="btnTassel" Click="btnTassel_Click" Content="Tassel" Width="200" Height="30" Margin="0,100,100,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1">
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF7A3737"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
         </Button>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="66,176,0,0" VerticalAlignment="Top" Width="1300"/>
-        <Label Content="We help people who have some inspiration create creatures and have fun with it! &#xD;&#xA;So If you are a creature - let's make some art!! &#xD;&#xA;If you are a junior in this sphere -Let's make magic!" Margin="358,224,346,677" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="None" VerticalContentAlignment="Center" TextOptions.TextHintingMode="Fixed" VerticalAlignment="Center"/>
-        <Label Content="Let's go!" HorizontalAlignment="Center" Margin="674,336,664,618" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="20"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="66,420,0,0" VerticalAlignment="Top" Width="1300"/>
-        <Label Content="Categories" HorizontalAlignment="Center" Margin="687,455,629,497" VerticalAlignment="Center" FontSize="22" FontFamily="Segoe UI Semibold"/>
-        <Image Margin="182,528,950,131" Source="07_main_1_1024x1024.jpg" Stretch="Fill" VerticalAlignment="Center" Width="300" HorizontalAlignment="Center"/>
-        <Image Margin="0,528,521,112" Source="91TPy6s2TzL._SX425_.jpg" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Right" Width="350"/>
-        <Image Margin="0,541,102,0" Source="Daler-Rowney-Fine-Grain-Drawing,-Heavyweight-and-Cartridge-Pads-A4.jpg" Stretch="Fill" VerticalAlignment="Top" Height="319" Width="320" HorizontalAlignment="Right"/>
-        <Label x:Name="labPaint" Content="Paint" HorizontalAlignment="Left" Margin="287,872,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="22"/>
-        <Label x:Name="labTassels" Content="Tassels" HorizontalAlignment="Left" Margin="700,873,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="22"/>
-        <Label x:Name="labPaper" Content="Paper" HorizontalAlignment="Left" Margin="1161,875,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="22"/>
-        <Button x:Name="openWind" Content="Button" HorizontalAlignment="Left" Margin="700,199,0,0" VerticalAlignment="Top" Width="75" Click="openWind_Click"/>
+        <Border Height="1" VerticalAlignment="Top" Margin="20,140,20,0" Background="Black"/>
+        <Label Margin="0,150,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Hello, creature! We help people find all things for their creatures! You are welcome!</Label>
+        <Label Margin="0,180,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Near, you can find our categories and others pretty things! :3</Label>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,210,0,0" FontFamily="Segoe Print Bold" FontSize="22">Let's make magic!</Label>
+        <Border Height="1" VerticalAlignment="Center" Margin="20,-20,20,0" Background="Black"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Margin="0,30,0,0">Categories</Label>
+        
+        <Button x:Name="mainPaintBtn" Click='mainPaintBtn_Click'  Margin="100,250,0,0" Width="220" Height="180" HorizontalAlignment="Left">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Paint</Label>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                    <Border.BorderBrush>
+                                        <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                    </Border.BorderBrush>
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="GroupBox.Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="mainPaperBtn" Click="mainPaperBtn_Click"  Margin="0,250,0,0" Width="220" Height="180" HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Paper</Label>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                    <Border.BorderBrush>
+                                        <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                    </Border.BorderBrush>
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="GroupBox.Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="mainTasselBtn" Click="mainTasselBtn_Click"  Margin="0,250,100,0" Width="220" Height="180" HorizontalAlignment="Right">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Tassel</Label>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                    <Border.BorderBrush>
+                                        <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                    </Border.BorderBrush>
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="GroupBox.Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto">@copy;2018, All rights reserved.</Label>
 
     </Grid>
 </Window>
