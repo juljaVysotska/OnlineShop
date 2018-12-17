@@ -39,5 +39,11 @@ namespace OnlineShop
         {
             MessageBox.Show("lfg;ls");
         }
+
+        private void openWind_Click(object sender, RoutedEventArgs e)
+        {
+            NewPage n = new NewPage();
+            n.Show();
+        }
     }
 }

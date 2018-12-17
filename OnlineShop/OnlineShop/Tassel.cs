@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShop
 {
-    class Tassel:Item
+    class Tassel: Item
     {
         public string Manufacturer { get; set; }
         public string TypeOfPile { get; set; }

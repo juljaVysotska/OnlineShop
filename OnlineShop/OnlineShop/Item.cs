@@ -8,7 +8,5 @@ namespace OnlineShop
 {
     class Item
     {
-        public int UniqueId { get; set; }
-
     }
 }

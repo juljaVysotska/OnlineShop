@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShop
 {
-    class Purchase:Item
+    class Purchase: Item
     {
         
         public int NumberOfOtems { get; set; }

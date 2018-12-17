@@ -35,7 +35,17 @@
             </Button.BorderBrush>
         </Button>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="66,176,0,0" VerticalAlignment="Top" Width="1300"/>
-
+        <Label Content="We help people who have some inspiration create creatures and have fun with it! &#xD;&#xA;So If you are a creature - let's make some art!! &#xD;&#xA;If you are a junior in this sphere -Let's make magic!" Margin="358,224,346,677" FontSize="20" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Cursor="None" VerticalContentAlignment="Center" TextOptions.TextHintingMode="Fixed" VerticalAlignment="Center"/>
+        <Label Content="Let's go!" HorizontalAlignment="Center" Margin="674,336,664,618" VerticalAlignment="Center" FontFamily="Segoe UI Black" FontSize="20"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="66,420,0,0" VerticalAlignment="Top" Width="1300"/>
+        <Label Content="Categories" HorizontalAlignment="Center" Margin="687,455,629,497" VerticalAlignment="Center" FontSize="22" FontFamily="Segoe UI Semibold"/>
+        <Image Margin="182,528,950,131" Source="07_main_1_1024x1024.jpg" Stretch="Fill" VerticalAlignment="Center" Width="300" HorizontalAlignment="Center"/>
+        <Image Margin="0,528,521,112" Source="91TPy6s2TzL._SX425_.jpg" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Right" Width="350"/>
+        <Image Margin="0,541,102,0" Source="Daler-Rowney-Fine-Grain-Drawing,-Heavyweight-and-Cartridge-Pads-A4.jpg" Stretch="Fill" VerticalAlignment="Top" Height="319" Width="320" HorizontalAlignment="Right"/>
+        <Label x:Name="labPaint" Content="Paint" HorizontalAlignment="Left" Margin="287,872,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="22"/>
+        <Label x:Name="labTassels" Content="Tassels" HorizontalAlignment="Left" Margin="700,873,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="22"/>
+        <Label x:Name="labPaper" Content="Paper" HorizontalAlignment="Left" Margin="1161,875,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="22"/>
+        <Button x:Name="openWind" Content="Button" HorizontalAlignment="Left" Margin="700,199,0,0" VerticalAlignment="Top" Width="75" Click="openWind_Click"/>
 
     </Grid>
 </Window>

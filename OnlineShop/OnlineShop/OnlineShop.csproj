@@ -54,6 +54,10 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="Item.cs" />
+    <Compile Include="NewPage.xaml.cs">
+      <DependentUpon>NewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Purchase.cs" />
     <Compile Include="Tassel.cs" />
     <Compile Include="User.cs" />
@@ -69,6 +73,9 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Paint.cs" />
@@ -96,6 +103,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="07_main_1_1024x1024.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="91TPy6s2TzL._SX425_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Daler-Rowney-Fine-Grain-Drawing,-Heavyweight-and-Cartridge-Pads-A4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

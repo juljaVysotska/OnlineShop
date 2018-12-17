@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShop
 {
-    class Paint:Item
+    class Paint: Item
     {
         public string Manufacturer { get; set; }
         public string Type { get; set; }
