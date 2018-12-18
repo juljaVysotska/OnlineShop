@@ -27,35 +27,47 @@ namespace OnlineShop
 
         private void btnPaint_Click(object sender, RoutedEventArgs e)
         {
-            Paint();
+            canvaMain.Visibility = Visibility.Collapsed;
+            canvaTemplate.Visibility = Visibility.Visible;
+            canvaCart.Visibility = Visibility.Collapsed;
         }
 
         private void btnPaper_Click(object sender, RoutedEventArgs e)
         {
-            Paper();
+            canvaMain.Visibility = Visibility.Collapsed;
+            canvaTemplate.Visibility = Visibility.Visible;
+            canvaCart.Visibility = Visibility.Collapsed;
         }
 
         private void btnTassel_Click(object sender, RoutedEventArgs e)
         {
-            Tassel();
+            canvaMain.Visibility = Visibility.Collapsed;
+            canvaTemplate.Visibility = Visibility.Visible;
+            canvaCart.Visibility = Visibility.Collapsed;
         }
 
         
         private void mainPaintBtn_Click(object sender, RoutedEventArgs e)
         {
-            Paint();
+            canvaMain.Visibility = Visibility.Collapsed;
+            canvaTemplate.Visibility = Visibility.Visible;
+            canvaCart.Visibility = Visibility.Collapsed;
         }
 
         private void mainPaperBtn_Click(object sender, RoutedEventArgs e)
         {
-            Paper();
+            canvaMain.Visibility = Visibility.Collapsed;
+            canvaTemplate.Visibility = Visibility.Visible;
+            canvaCart.Visibility = Visibility.Collapsed;
         }
 
        
 
         private void mainTasselBtn_Click(object sender, RoutedEventArgs e)
         {
-            Tassel();
+            canvaMain.Visibility = Visibility.Collapsed;
+            canvaTemplate.Visibility = Visibility.Visible;
+            canvaCart.Visibility = Visibility.Collapsed;
         }
 
         void Paint()
@@ -71,6 +83,30 @@ namespace OnlineShop
         void Tassel()
         {
             MessageBox.Show("Tassel");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Info info = new Info();
+            info.Show();
+        }
+
+      
+
+        private void logo_Click(object sender, RoutedEventArgs e)
+        {
+            canvaMain.Visibility = Visibility.Visible;
+            canvaTemplate.Visibility = Visibility.Collapsed;
+
+            canvaCart.Visibility = Visibility.Collapsed;
+        }
+
+        private void btnCart_Click(object sender, RoutedEventArgs e)
+        {
+
+            canvaMain.Visibility = Visibility.Collapsed;
+            canvaTemplate.Visibility = Visibility.Collapsed;
+            canvaCart.Visibility = Visibility.Visible;
         }
     }
 }

@@ -28,3 +28,7 @@ C:\Users\juliavysotska\source\repos\OnlineShop\OnlineShop\obj\Debug\OnlineShop.p
 \\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Properties.Resources.resources
 \\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.GenerateResource.cache
 \\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\newwind.g.cs
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\newwind.baml
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\Info.g.cs
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\Info.baml

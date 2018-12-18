@@ -5,9 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OnlineShop"
         mc:Ignorable="d"
-        Title="Home" Height="590" Width="970">
+        Title="Home" Height="665" Width="970">
     <Grid>
-        <Label HorizontalContentAlignment="Center" Margin="0,20,0,0" FontFamily="Segoe Print" FontSize="36">ArtMart</Label>
+        <Button x:Name="logo" Content="ArtMart" Height="60" Width="200" Click="logo_Click" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontFamily="Segoe Print" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                    Storyboard.TargetName="logo" Storyboard.TargetProperty="Opacity"
+                                    From="1.0" To="0.0" Duration="0:0:2" AutoReverse="True" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
         <Border Height="1" VerticalAlignment="Top" Margin="20,85,20,0" Background="Black"/>
         <Button x:Name="btnPaint" Click="btnPaint_Click" Content="Paint" Width="200" Height="30" Margin="100,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FF707070">
             <Button.Style>
@@ -79,13 +91,15 @@
             </Button.Style>
         </Button>
         <Border Height="1" VerticalAlignment="Top" Margin="20,140,20,0" Background="Black"/>
-        <Label Margin="0,150,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Hello, creature! We help people find all things for their creatures! You are welcome!</Label>
-        <Label Margin="0,180,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Near, you can find our categories and others pretty things! :3</Label>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,210,0,0" FontFamily="Segoe Print Bold" FontSize="22">Let's make magic!</Label>
-        <Border Height="1" VerticalAlignment="Center" Margin="20,-20,20,0" Background="Black"/>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Margin="0,30,0,0">Categories</Label>
         
-        <Button x:Name="mainPaintBtn" Click='mainPaintBtn_Click'  Margin="100,250,0,0" Width="220" Height="180" HorizontalAlignment="Left">
+        <Canvas x:Name="canvaMain" HorizontalAlignment="Left" Margin="0,160,0,0" >
+            <Label Margin="100,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Hello, creature! We help people find all things for their creatures! You are welcome!</Label>
+        <Label Margin="180,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Near, you can find our categories and others pretty things! :3</Label>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="360,80,0,0" FontFamily="Segoe Print Bold" FontSize="22">Let's make magic!</Label>
+        <Border Height="1" Width="920" Margin="20,140,20,0" Background="Black"/>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Margin="425,160,0,0">Categories</Label>
+
+        <Button x:Name="mainPaintBtn"  Click='mainPaintBtn_Click'  Margin="100,200,0,0" Width="220" Height="180" HorizontalAlignment="Left">
             <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Paint</Label>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -112,10 +126,12 @@
                             </Setter>
                         </Trigger>
                     </Style.Triggers>
+                    
                 </Style>
             </Button.Style>
+                
         </Button>
-        <Button x:Name="mainPaperBtn" Click="mainPaperBtn_Click"  Margin="0,250,0,0" Width="220" Height="180" HorizontalAlignment="Center">
+        <Button x:Name="mainPaperBtn" Click="mainPaperBtn_Click"  Margin="380,200,0,0" Width="220" Height="180" HorizontalAlignment="Center">
             <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Paper</Label>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -145,7 +161,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="mainTasselBtn" Click="mainTasselBtn_Click"  Margin="0,250,100,0" Width="220" Height="180" HorizontalAlignment="Right">
+        <Button x:Name="mainTasselBtn" Click="mainTasselBtn_Click"  Margin="660,200,100,0" Width="220" Height="180" HorizontalAlignment="Right">
             <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Tassel</Label>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -175,8 +191,257 @@
                 </Style>
             </Button.Style>
         </Button>
+        </Canvas>
+        <Canvas x:Name="canvaTemplate" HorizontalAlignment="Left" Margin="0,160,0,0" Visibility="Hidden">
+            <GroupBox Header="Color" HorizontalAlignment="Left" Margin="100,10,0,0"
+                  VerticalAlignment="Top" Height="150" Width="150">
+                <Grid HorizontalAlignment="Left" Height="150" VerticalAlignment="Top"
+                  Width="150" Margin="0,0,-2,-12">
+                    <CheckBox Content="Blue" HorizontalAlignment="Left"
+                          Margin="10,21,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Black" HorizontalAlignment="Left"
+                          Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="White" HorizontalAlignment="Left"
+                          Margin="10,61,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Green" HorizontalAlignment="Left"
+                          Margin="10,81,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Red" HorizontalAlignment="Left"
+                          Margin="10,101,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Color" HorizontalAlignment="Left" Margin="100,170,0,0"
+                  VerticalAlignment="Top" Height="150" Width="150">
+                <Grid HorizontalAlignment="Left" Height="180" VerticalAlignment="Top"
+                  Width="150" Margin="0,0,-2,-12">
+                    <CheckBox Content="Blue" HorizontalAlignment="Left"
+                          Margin="10,21,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Black" HorizontalAlignment="Left"
+                          Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="White" HorizontalAlignment="Left"
+                          Margin="10,61,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Green" HorizontalAlignment="Left"
+                          Margin="10,81,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Red" HorizontalAlignment="Left"
+                          Margin="10,101,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </GroupBox>
 
+
+            <Button HorizontalAlignment="Center" Click="Button_Click" VerticalAlignment="Center" Height="200" Width="200" Margin="500,10,0,10" Background="AliceBlue">
+                <Label Content="NAMENAMENAME" HorizontalAlignment="Center" Margin="10,170,0,0"/>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button HorizontalAlignment="Center"   Height="200" Width="200" Margin="720,10,0,10" Background="AliceBlue" Click="Button_Click">
+                <Label Content="NAMENAMENAME" HorizontalAlignment="Center" Margin="10,170,0,0"/>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button HorizontalAlignment="Center" Click="Button_Click" VerticalAlignment="Center" Height="200" Width="200" Margin="280,10,0,10" Background="AliceBlue">
+                <Label Content="NAMENAMENAME" HorizontalAlignment="Center" Margin="10,170,0,0"/>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button HorizontalAlignment="Center" Click="Button_Click" VerticalAlignment="Center" Height="200" Width="200" Margin="500,230,0,10" Background="AliceBlue">
+                <Label Content="NAMENAMENAME" HorizontalAlignment="Center" Margin="10,170,0,0"/>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button HorizontalAlignment="Center" Click="Button_Click" VerticalAlignment="Center" Height="200" Width="200" Margin="720,230,0,10" Background="AliceBlue">
+                <Label Content="NAMENAMENAME" HorizontalAlignment="Center" Margin="10,170,0,0"/>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button HorizontalAlignment="Center" Click="Button_Click" VerticalAlignment="Center" Height="200" Width="200" Margin="280,230,0,10" Background="AliceBlue">
+                <Label Content="NAMENAMENAME" HorizontalAlignment="Center" Margin="10,170,0,0"/>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Canvas>
+        <Canvas x:Name="canvaCart" HorizontalAlignment="Left" Margin="0,160,0,0" Visibility="Hidden">
+            <Label Content="Cart is empty! :(" Margin="350,160,0,0" FontFamily="Segoe UI Semibold" FontSize="36"/>
+        </Canvas>
         <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto">@copy;2018, All rights reserved.</Label>
+        <Button x:Name="btnCart" Click="btnCart_Click" Content="Cart" HorizontalAlignment="Left" Margin="865,24,0,0" VerticalAlignment="Top" Width="75">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1">
+
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF7A3737"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
     </Grid>
 </Window>
