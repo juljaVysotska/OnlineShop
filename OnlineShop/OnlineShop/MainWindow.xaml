@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="Home" Height="665" Width="970">
     <Grid>
-        <Button x:Name="logo" Content="ArtMart" Height="60" Width="200" Click="logo_Click" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontFamily="Segoe Print" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Canvas x:Name="logInCanva">
+            <Label Content="Log In, pls" Margin="440,150" FontFamily="Arial Black" FontSize="22"></Label>
+            <Label Content="Login:" Margin="300,200"></Label>
+            <TextBox x:Name="txtBoxLogIn" Width="300" Height="30" Margin="355,200"></TextBox>
+            <Label Content="Passoword:" Margin="280,250"></Label>
+            <TextBox x:Name="txtBoxPass" Width="300" Height="30" Margin="355,250"></TextBox>
+            <Button x:Name="btnExit" Click="btnExit_Click" Width="150" Height="30" Content="Exit" Margin="20"></Button>
+            <Button x:Name="btnLogin" Click="btnLogin_Click" Width="150" Height="30" Content="Log In" Margin="435,300"></Button>
+            <Button x:Name="btnRegistry" Click="btnRegistry_Click" Width="150" Height="30" Content="Registry" Margin="435, 350"></Button>
+        </Canvas>
+        <Canvas x:Name="navBar" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden">
+        <Button x:Name="logo" Content="ArtMart" Height="60" Width="200" Click="logo_Click" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="-100,20,0,0" FontFamily="Segoe Print" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Loaded">
                     <BeginStoryboard>
@@ -20,8 +31,32 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Border Height="1" VerticalAlignment="Top" Margin="20,85,20,0" Background="Black"/>
-        <Button x:Name="btnPaint" Click="btnPaint_Click" Content="Paint" Width="200" Height="30" Margin="100,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FF707070">
+        <!--<Border Height="1" VerticalAlignment="Top" Margin="20,85,20,0" Background="Black"/>-->
+            <Button x:Name="btnCart" Click="btnCart_Click" Content="Cart" HorizontalAlignment="Left" Margin="325,46,0,0" VerticalAlignment="Top" Width="75">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1">
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF7A3737"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnPaint" Click="btnPaint_Click" Content="Paint" Width="200" Height="30" Margin="-100,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FF707070">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="White"/>
@@ -44,7 +79,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="btnPaper" Click="btnPaper_Click" Content="Paper" Width="200" Height="30" Margin="0,100,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" >
+        <Button x:Name="btnPaper" Click="btnPaper_Click" Content="Paper" Width="200" Height="30" Margin="-600,100,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="White"/>
@@ -67,7 +102,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="btnTassel" Click="btnTassel_Click" Content="Tassel" Width="200" Height="30" Margin="0,100,100,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Button x:Name="btnTassel" Click="btnTassel_Click" Content="Tassel" Width="200" Height="30" Margin="200,100,100,0" HorizontalAlignment="Right" VerticalAlignment="Top">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="White"/>
@@ -91,8 +126,8 @@
             </Button.Style>
         </Button>
         <Border Height="1" VerticalAlignment="Top" Margin="20,140,20,0" Background="Black"/>
-        
-        <Canvas x:Name="canvaMain" HorizontalAlignment="Left" Margin="0,160,0,0" >
+        </Canvas>
+        <Canvas x:Name="canvaMain" HorizontalAlignment="Left" Margin="0,160,0,0" Visibility="Hidden" >
             <Label Margin="100,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Hello, creature! We help people find all things for their creatures! You are welcome!</Label>
         <Label Margin="180,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="18">Near, you can find our categories and others pretty things! :3</Label>
         <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="360,80,0,0" FontFamily="Segoe Print Bold" FontSize="22">Let's make magic!</Label>
@@ -100,40 +135,46 @@
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Margin="425,160,0,0">Categories</Label>
 
         <Button x:Name="mainPaintBtn"  Click='mainPaintBtn_Click'  Margin="100,200,0,0" Width="220" Height="180" HorizontalAlignment="Left">
-            <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Paint</Label>
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" BorderThickness="1">
-                                    <Border.BorderBrush>
-                                        <SolidColorBrush Color="Gray" Opacity="0.4"/>
-                                    </Border.BorderBrush>
 
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="GroupBox.Effect">
-                                <Setter.Value>
-                                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                    
-                </Style>
-            </Button.Style>
-                
-        </Button>
+                <Canvas >
+                    <Image Source="Resources/img/paint.jpg" Width="140" Margin="-70,-200,0,0"></Image >
+                    <Label HorizontalAlignment="Center" Margin="-15,-30,0,0">Paint</Label>
+                </Canvas>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
+
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+            </Button>
         <Button x:Name="mainPaperBtn" Click="mainPaperBtn_Click"  Margin="380,200,0,0" Width="220" Height="180" HorizontalAlignment="Center">
-            <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Paper</Label>
-            <Button.Style>
+                <Canvas >
+                    <Image Source="Resources//img/paper.jpg" Width="140" Margin="-70,-200,0,0" OpacityMask="Black"></Image>
+                    <Label HorizontalAlignment="Center" Margin="-15,-30,0,0">Paper</Label>
+                </Canvas>
+                <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="White"/>
                     <Setter Property="Template">
@@ -162,35 +203,38 @@
             </Button.Style>
         </Button>
         <Button x:Name="mainTasselBtn" Click="mainTasselBtn_Click"  Margin="660,200,100,0" Width="220" Height="180" HorizontalAlignment="Right">
-            <Label HorizontalAlignment="Center" VerticalAlignment="Bottom">Tassel</Label>
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" BorderThickness="1">
-                                    <Border.BorderBrush>
-                                        <SolidColorBrush Color="Gray" Opacity="0.4"/>
-                                    </Border.BorderBrush>
+                <Canvas >
+                    <Image x:Name="image1" Source="Resources//img/tassel.jpg" Width="140" Margin="-70,-200,0,0"></Image>
+                    <Label HorizontalAlignment="Center" Margin="-15,-30,0,0">Tassel</Label>
+                </Canvas>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="Gray" Opacity="0.4"/>
+                                        </Border.BorderBrush>
 
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="GroupBox.Effect">
-                                <Setter.Value>
-                                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="GroupBox.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Canvas>
         <Canvas x:Name="canvaTemplate" HorizontalAlignment="Left" Margin="0,160,0,0" Visibility="Hidden">
             <GroupBox Header="Color" HorizontalAlignment="Left" Margin="100,10,0,0"
@@ -416,32 +460,9 @@
             </Button>
         </Canvas>
         <Canvas x:Name="canvaCart" HorizontalAlignment="Left" Margin="0,160,0,0" Visibility="Hidden">
-            <Label Content="Cart is empty! :(" Margin="350,160,0,0" FontFamily="Segoe UI Semibold" FontSize="36"/>
+            <Label x:Name="labCart" Content="Cart is empty! :(" Margin="350,160,0,0" FontFamily="Segoe UI Semibold" FontSize="36"/>
         </Canvas>
         <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto">@copy;2018, All rights reserved.</Label>
-        <Button x:Name="btnCart" Click="btnCart_Click" Content="Cart" HorizontalAlignment="Left" Margin="865,24,0,0" VerticalAlignment="Top" Width="75">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="Gray" BorderThickness="1">
-
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#FF7A3737"/>
-                            <Setter Property="Foreground" Value="White"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-
+        
     </Grid>
 </Window>

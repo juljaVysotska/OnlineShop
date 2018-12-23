@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShop
 {
-    class Item
+    class Order
     {
-        public int id;
-        public String name;
-        public string manufacturer;
-        public double price;
     }
 }

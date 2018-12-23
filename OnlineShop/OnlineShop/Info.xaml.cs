@@ -27,6 +27,7 @@ namespace OnlineShop
         private void btnAddCart_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Sucsessfully add!","Add to cart");
+            Close();
         }
     }
 }

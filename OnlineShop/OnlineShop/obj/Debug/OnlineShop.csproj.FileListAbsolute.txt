@@ -32,3 +32,8 @@ C:\Users\juliavysotska\source\repos\OnlineShop\OnlineShop\obj\Debug\OnlineShop.p
 \\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\newwind.baml
 \\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\Info.g.cs
 \\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\Info.baml
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\bin\Debug\Newtonsoft.Json.dll
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\bin\Debug\System.Net.Http.Formatting.dll
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\bin\Debug\Newtonsoft.Json.xml
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\bin\Debug\System.Net.Http.Formatting.xml
+\\Mac\Home\Documents\GitHub\OnlineShop\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.CopyComplete
